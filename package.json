@@ -48,7 +48,9 @@
     "extends": "airbnb-base"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "babel-loader": "^8.0.0-beta.0",
+    "core-js": "^3.8.0",
     "i": "^0.3.6"
   }
 }
