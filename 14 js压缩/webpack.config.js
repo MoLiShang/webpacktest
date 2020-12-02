@@ -13,6 +13,6 @@ module.exports={
             template:'./src/index.html'
         })
     ],
-    //生产环境下自动压缩js，因此不需要担心
+    //生产环境下自动压缩js，因此不需要担心，因此只要将mode调整成为‘production’即可以进行js的压缩
     mode:'production'
 }
