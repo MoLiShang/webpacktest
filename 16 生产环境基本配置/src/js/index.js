@@ -5,14 +5,13 @@ const add = (x, y) => x + y;
 // eslint-disable-next-line
 console.log(add(2, 5));
 
+const promise = new Promise((resolve) => {
+  setTimeout(() => {
+    // console.log('定时器可以执行了');
+    resolve();
+  }, 1000);
+});
 
-const promise=new Promise((resolve)=>{
-    setTimeout(()=>{
-        console.log('定时器可以执行了')
-        resolve();
-    },1000);
-})
+console.log(promise);
 
-console.log(promise)
-
-console.log(add(2,5))
+console.log(add(2, 5));
