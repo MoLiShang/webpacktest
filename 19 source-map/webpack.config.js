@@ -81,12 +81,35 @@ module.exports = {
      * 
      * 自定义配置
      * [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
+     * source-map 只需要
      * inline-source-map //内联source-map文件，不产生.map文件，只会在output.js文件中添加
      *  只生成了一个source-map
-     * hidden-source-map
+     * hidden-source-map 外部 错误代码错误原因，但是没有错误位置，不能追踪到源代码的错误，只能提示到构建后代码的错误（为了隐藏源代码）
      * 
      * eval-source-map
      * 每一个文件都生成对应的source-map，都在eval
      * 内联 和 外部的区别：1、外部生成了文件 2、外部生成了文件
+     * nosource-map 外部 错误代码准确信息，但是没有任何源代码信息
+     * cheap-source-map 外部 错误代码准确信息和源代码错误位置 只能精确到行
+     * cheap-module-source-map 外部 错误代码准确信息和 源代码的错误位置
+     * module会将loader的source-map加入进来
+     * 
+     * 
+     * 
+     * 生产环境：速度快，调试更友好
+     * 速度快（eval>inline>cheap>...)
+     * eval-cheap-source-map
+     * eval-source-map
+     * 调试更友好
+     * source-map
+     * cheap-module-source-map
+     * cheap-source-map
+     * -->   eval-source-map /eval-cheap-module-source-map
+     * 开发环境：源代码要不要隐藏？调试要不要更友好
+     * 内联会让代码体积变大，所以在生产环境不用内联
+     * nosources-source-map
+     * hidden-source-map
+     * 
+     * source-map
      */
 }
