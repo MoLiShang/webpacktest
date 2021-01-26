@@ -25,6 +25,7 @@ console.log('mul', mul(2, 3));
      npm i serve -g
      serve -s build 启动服务器，将build目录下所有资源作为静态资源暴露出去
   */
+ //激活pwa
 // 注册serviceworker
 // 处理兼容性问题
 if ('serviceWorker' in navigator) {
